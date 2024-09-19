@@ -1,6 +1,7 @@
 #include "kernel/types.h"
 #include "user/user.h"
 
+// p[0] is the read end of pipe ; p[1] is the write of pipe; 
 
 int main()
 {

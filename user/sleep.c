@@ -7,6 +7,6 @@ int main(int argc, char *argv[])
         fprintf(2, "sleep:no argument\n");
         exit(1); // 1指错误
     }
-    sleep(atoi(argv[1]));  //argv[1]是传入的参数,atoi会将字符串转为数字
-    exit(0);
+    int ret = sleep(atoi(argv[1]));  //argv[1]是传入的参数,atoi会将字符串转为数字,sleep will return num to imply success or fail
+    exit(ret);
 }
