@@ -43,6 +43,7 @@ void find(char *path, char *name)
         if(strcmp(de.name, ".") == 0 || strcmp(de.name, "..") == 0){   // 跳过. 和 .. 目录
             continue;
         }
+        // 这个函数保证了这个循环可以进行,p指向'/'的后面,所以每次循环都会有字符覆盖这之后的内容;又因为会在覆盖之后补上'\0',所以可以找到结束标记
         memmove(p, de.name, DIRSIZ);   // 将de.name复制到buf的末尾,如果DIRSIZ大于de.name那么会在buf后面补充额外的字节
         p[DIRSIZ] = 0;     // 补上\0,这个字符串结束标志
         if(stat(buf, &st) < 0){    //取出该文件或目录的详细信息
