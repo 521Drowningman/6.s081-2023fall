@@ -10,7 +10,7 @@ void xargs(char *argv[])
         exit(1);
     }
     if(pid == 0){
-        // 第二个参数用 argv+1 的原因是:因为命令行参数的第一个元素应该命令本身.
+        // 第二个参数用 argv 的原因是:因为命令行参数的第一个元素应该命令本身.
         exec(argv[0], argv);
         fprintf(2, "exec failed");
         exit(0);
